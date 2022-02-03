@@ -1,5 +1,3 @@
-
-
 const express=require("express")
 const mongoose=require("mongoose")
 const routes=require("./routes")
@@ -15,7 +13,7 @@ mongoose.connect('mongodb+srv://renish:9017@cluster0.upbzi.mongodb.net/studentda
     app.use(bodyParser.urlencoded({extended:false}))
     app.use("/api",routes);
     app.use(express.json()) // new
-    app.listen(3000,()=>
+    app.listen(process.env.PORT||3000,()=>
     {
         console.log("Server created")
     })
